@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "required": [
+        "code",
+        "status",
+        "message",
+        "data"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "code": {
+            "type": "integer"
+        },
+        "status": {
+            "type": "string"
+        },
+        "message": {
+            "type": "string"
+        },
+        "data": {
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "type": "object",
+                "required": [
+                    "order_detail_id",
+                    "order_header_id",
+                    "order_no",
+                    "item_no",
+                    "order_area",
+                    "vehicle_type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "order_detail_id": {
+                        "type": "string"
+                    },
+                    "order_header_id": {
+                        "type": "string"
+                    },
+                    "order_no": {
+                        "type": "string"
+                    },
+                    "item_no": {
+                        "type": "integer"
+                    },
+                    "order_area": {
+                        "type": "string"
+                    },
+                    "vehicle_type": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
