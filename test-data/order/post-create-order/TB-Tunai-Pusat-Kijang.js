@@ -1,12 +1,12 @@
 const path = require('path');
 const scriptName = path.basename(__filename).split('.')[0];
 const schema = require('../../../schema/success-create-order.json');
-// const tools = require('../../../../utilities/tools.js');
+// const tools = require('../../../utilities/tools.js');
 
 const test_data = {
     "title": scriptName,
     "header": {
-        "authorization": "bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ2OTI2MDgsImlhdCI6MTc0NDYwNjIwOCwiaXNzIjoic2VjdXJpdHkuYmx1ZWJpcmQuaWQiLCJzdWIiOiJHb2xkIEpLVCBQdXNhdCIsImF1dGhfdGltZSI6MTc0NDYwNjIwOCwibmFtZSI6IkdvbGQgSktUIFB1c2F0IiwiZW1haWwiOiJnb2xkamt0NUBibHVlYmlyZC5pZCIsInBob25lX251bWJlciI6IjA4NTczMjcyMTAzMSIsImFkZHJlc3MiOnt9LCJ1dWlkIjoiN2M1ZjE3YjctMDhkNi00OTJiLWI1NjQtYmNiMjQ0OGRiNDU3IiwidWlkIjoiZ29sZGprdDUiLCJkb21haW4iOiJibHVlYmlyZC5pZCIsImFjbCI6eyIxIjo0Mjk0OTY3Mjk1LCIxMCI6MTQwNzM3NDg4MzU1MzI3LCIxMjYiOjMsIjE4Ijo4MTkxLCIyNSI6MTMxMDcxLCIzMCI6NDI5NDk2NzI5NiwiMzkiOjY4NzE5NDc2NzM1LCI0NiI6MTA3Mzc0MTgyMywiNTUiOjE1LCI2MSI6MTY3NzcyMTUsIjY3IjoyMDQ3LCI3NiI6MTI3LCI5MyI6NTYyOTQ5OTUzNDIxMzExfSwiYWNscyI6eyIxIjoiNDI5NDk2NzI5NSIsIjEwIjoiMTQwNzM3NDg4MzU1MzI3IiwiMTI2IjoiMyIsIjE4IjoiODE5MSIsIjI1IjoiMTMxMDcxIiwiMzAiOiI0Mjk0OTY3Mjk2IiwiMzkiOiI2ODcxOTQ3NjczNSIsIjQ2IjoiMTA3Mzc0MTgyMyIsIjU1IjoiMTUiLCI2MSI6IjE2Nzc3MjE1IiwiNjciOiIyMDQ3IiwiNzYiOiIxMjciLCI5MyI6IjU2Mjk0OTk1MzQyMTMxMSJ9LCJkb21haW5faWQiOiJhMGE0ODA3Ni0zMTk0LTQ2MTItYWZhZS01YmEwYjQ2ZDYxOGMiLCJkb21haW5fbmFtZSI6IkpLVCIsImRvbWFpbl90eXBlIjoyLCJncm91cF9uYW1lIjoiZ2JfcmVzZXJ2YXNpIiwiYmJnLmJiZC5hY2Nlc3MiOnsiYXJlYXMiOlsiYTBhNDgwNzYtMzE5NC00NjEyLWFmYWUtNWJhMGI0NmQ2MThjIl0sIm91dGxldHMiOm51bGwsInBvb2xzIjpudWxsfSwidXNlcl90eXBlIjoxLCJvcGVyYXRvcl9jb2RlIjoiSE8ifQ.lbgy_PecFvhgfXHTbccqfKHZz_rEztyqiqzds08EWq1Rlcbm6F-LDyy-rvPUP-MRzZN1Vw3ZSHmWG7U7ZGjiGg",
+        "authorization": "bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ5NjYyNTIsImlhdCI6MTc0NDg3OTg1MiwiaXNzIjoic2VjdXJpdHkuYmx1ZWJpcmQuaWQiLCJzdWIiOiJHb2xkIEpLVCBQdXNhdCIsImF1dGhfdGltZSI6MTc0NDg3OTg1MiwibmFtZSI6IkdvbGQgSktUIFB1c2F0IiwiZW1haWwiOiJnb2xkamt0NUBibHVlYmlyZC5pZCIsInBob25lX251bWJlciI6IjA4NTczMjcyMTAzMSIsImFkZHJlc3MiOnt9LCJ1dWlkIjoiN2M1ZjE3YjctMDhkNi00OTJiLWI1NjQtYmNiMjQ0OGRiNDU3IiwidWlkIjoiZ29sZGprdDUiLCJkb21haW4iOiJibHVlYmlyZC5pZCIsImFjbCI6eyIxIjo0Mjk0OTY3Mjk1LCIxMCI6MTQwNzM3NDg4MzU1MzI3LCIxMjYiOjMsIjE4Ijo4MTkxLCIyNSI6MTMxMDcxLCIzMCI6NDI5NDk2NzI5NiwiMzkiOjY4NzE5NDc2NzM1LCI0NiI6MTA3Mzc0MTgyMywiNTUiOjE1LCI2MSI6MTY3NzcyMTUsIjY3IjoyMDQ3LCI3NiI6MTI3LCI5MyI6NTYyOTQ5OTUzNDIxMzExfSwiYWNscyI6eyIxIjoiNDI5NDk2NzI5NSIsIjEwIjoiMTQwNzM3NDg4MzU1MzI3IiwiMTI2IjoiMyIsIjE4IjoiODE5MSIsIjI1IjoiMTMxMDcxIiwiMzAiOiI0Mjk0OTY3Mjk2IiwiMzkiOiI2ODcxOTQ3NjczNSIsIjQ2IjoiMTA3Mzc0MTgyMyIsIjU1IjoiMTUiLCI2MSI6IjE2Nzc3MjE1IiwiNjciOiIyMDQ3IiwiNzYiOiIxMjciLCI5MyI6IjU2Mjk0OTk1MzQyMTMxMSJ9LCJkb21haW5faWQiOiJhMGE0ODA3Ni0zMTk0LTQ2MTItYWZhZS01YmEwYjQ2ZDYxOGMiLCJkb21haW5fbmFtZSI6IkpLVCIsImRvbWFpbl90eXBlIjoyLCJncm91cF9uYW1lIjoiZ2JfcmVzZXJ2YXNpIiwiYmJnLmJiZC5hY2Nlc3MiOnsiYXJlYXMiOlsiYTBhNDgwNzYtMzE5NC00NjEyLWFmYWUtNWJhMGI0NmQ2MThjIl0sIm91dGxldHMiOm51bGwsInBvb2xzIjpudWxsfSwidXNlcl90eXBlIjoxLCJvcGVyYXRvcl9jb2RlIjoiSE8ifQ.8yVVMCo_My7M_2lFD_bDuSQS5YB2Tcc4G-JCNA2eKGAQrOyHlSG_AidwAKijszZ_ysQ3g2QTo_oP-AcZBtIjWQ",
     },
     "body": {
         "header": {
@@ -49,28 +49,36 @@ const test_data = {
                 "rate_usd": 15000,
                 "pickup_point": "KANTOR PUSAT BLUEBIRD, MAMPANG PRAPATAN, SOUTH JAKARTA  INDONESIA, 12790",
                 "pickup_latlong": "-6.2465,106.825897",
-                "destination_group": "POINT",
-                "price_idr": 210000,
-                "price_usd": 15,
+                "destination_group": "TIMEBASE",
+                "price_idr": 170000,
+                "price_usd": 20,
                 "vehicle_type": "KIJANG",
                 "vehicle_class": "STD2",
-                "destination_code": "PDA1",
-                "service_type": "",
-                "duration_used": 1,
-                "duration_used_unit": "HOURS",
-                "id_service_type_rules": 176,
-                "destination_type": "AIRPORT",
-                "destination_name": "PDA1 - Airport Transfer Zona 1",
+                "destination_code": "P1J",
+                "service_type": "HOURLY",
+                "duration_used": 60,
+                "duration_used_unit": "MINUTES",
+                "id_service_type_rules": 177,
+                "destination_type": "NON_INAP",
+                "destination_name": "P1J - 1 jam",
                 "deposit_toll": null,
                 "package_toll": null,
                 "additional_toll": null,
                 "drop_point": "OK, RW 02, ANCOL, PADEMANGAN, NORTH JAKARTA, JAKARTA SPECIAL CAPITAL REGION, RT 07, INDONESIA",
                 "start_date": new Date().toISOString(), // if want to set time use "2025-04-14T12:38:00+07:00"
                 "start_time": new Date().toISOString(), // if want to set time use "2025-04-14T12:38:00+07:00"
+                "type_service": "",
+                "drop_latlong": "-6.1297,106.816399",
+                "end_time": new Date(Date.now() + 60 * 60 * 1000).toISOString(), // i set this end time is 1 hour from start_time, 
+                // if u want create order for 2 times or more u can set this time more than 1 hour use "end_time": new Date(Date.now() + 60 * 60 * 3 * 1000).toISOString(), change *3 
+                // and if u want set manually use "end_time": "2025-04-14T12:38:00+07:00", follow the start time 
+                "duration": 60,
+                "max_distance": null,
                 "request_driver": {},
                 "driver_notes": "",
                 "notes": "",
-                "charge_toll_to": "PEMESAN",
+                "overtime_payer": "Pemesan",
+                "overtime_payment_method": "Deposit",
                 "percent_discount": null,
                 "nominal_discount": null,
                 "price_discount": null,
@@ -97,22 +105,18 @@ const test_data = {
                     ],
                     "service_type_id": 151,
                     "service_type_name": "Base Price Jakarta",
-                    "created_at": new Date().toISOString(), // if want to set time use "2025-04-14T12:38:00+07:00"
-                    "updated_at": new Date().toISOString(), // if want to set time use "2025-04-14T12:38:00+07:00"
+                    "created_at": new Date().toISOString(),
+                    "updated_at": new Date().toISOString(),
                     "deleted_at": "0001-01-01T00:00:00Z",
                     "label": "HO - Pusat Jakarta"
                 },
                 "attention_name": "Gold JKT Tester",
-                "total_price": 210000,
+                "total_price": 170000,
                 "executor_code": "HO",
                 "executor_name": "Pusat Jakarta",
                 "executor_id": 90,
                 "assign_driver": null,
-                "drop_latlong": "-6.1297,106.816399",
-                "end_time": new Date(Date.now() + 60 * 60 * 1000).toISOString(), // i set this end time is 1 hour from start_time, 
-                // if u want create order for 2 times or more u can set this time more than 1 hour use "end_time": new Date(Date.now() + 60 * 60 * 3 * 1000).toISOString(), change *3 
-                // and if u want set manually use "end_time": "2025-04-14T12:38:00+07:00", follow the start time 
-                "price_idr_default": 210000
+                "price_idr_default": 170000
             }
         ],
         "payment": {
@@ -130,7 +134,7 @@ const test_data = {
                 0
             ],
             "list_price": [
-                210000
+                170000
             ],
             "list_discount": [
                 0
@@ -139,9 +143,9 @@ const test_data = {
             "currency": "IDR",
             "executor_code": "HO",
             "payment_method": "CASH",
-            "total_price": 210000,
+            "total_price": 170000,
             "down_payment": 0,
-            "base_price": 210000,
+            "base_price": 170000,
             "total_deposit_toll": 0,
             "total_package_toll": 0,
             "total_additional_toll": 0,
