@@ -68,6 +68,8 @@ By using this template, you can streamline your test automation setup, reduce co
 
 ## Authors
 
+this api automate template is made by RND team at my company, this API Create Order CODE is maintain by myslef
+
 Contributors names and contact info
 
 [@yophiza.tulus](https://git.bluebird.id/yophiza.tulus)
