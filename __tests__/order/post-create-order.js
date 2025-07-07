@@ -1,5 +1,5 @@
 const orderCollection = require('../../collections/order.js');
-const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data', 'pusat');
+const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data');
 const logger = require('../../utilities/logger.js');
 const verifier = require('../../utilities/verifier.js');
 

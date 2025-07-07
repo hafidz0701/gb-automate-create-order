@@ -1,17 +1,38 @@
-globalVariables = require('./global-variables.json')
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
 
-module.exports = async function (globalConfig, projectConfig) {
-    console.log(globalConfig.testPathPattern);
-    console.log(projectConfig.cache);
+module.exports = async function () {
+  try {
+    const response = await axios.post(
+      'https://stgapi.bluebird.id/token/auth',
+      {
+        user_id: "goldjkt5",
+        user_secret: "abc123456",
+        scope: "openid email profile phone offline_access",
+        response_type: "id_token token code"
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
 
-    console.log(globalVariables);
-    globalVariables.__EXAMPLE_TOKEN__ = token()
-};
+    console.log("🔍 Token Response:", response.data);
 
-function rand() {
-    return Math.random().toString(36).substr(2); // remove `0.`
-};
+    const token = response.data.id_token;
+    if (!token) throw new Error("❌ id_token tidak ditemukan dalam response");
 
-function token() {
-    return rand() + rand() + rand(); // to make it longer
+    const globalVariablesPath = path.join(__dirname, 'global-variables.json');
+    const globalVariables = JSON.parse(fs.readFileSync(globalVariablesPath, 'utf8'));
+
+    globalVariables.__TOKEN__ = `Bearer ${token}`;
+    fs.writeFileSync(globalVariablesPath, JSON.stringify(globalVariables, null, 2));
+
+    console.log("✅ Token berhasil disimpan ke global-variables.json");
+
+  } catch (error) {
+    console.error("❌ Gagal mendapatkan token:", error.message);
+  }
 };

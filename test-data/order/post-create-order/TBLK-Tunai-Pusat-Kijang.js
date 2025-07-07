@@ -1,13 +1,13 @@
 const path = require('path');
+const globalVars = require(path.resolve(process.cwd(), 'config/global-variables.json'));
 const scriptName = path.basename(__filename).split('.')[0];
 const schema = require('../../../schema/success-create-order.json');
-const { title } = require('process');
-// const tools = require('../../../../utilities/tools.js');
+// const tools = require('../../../utilities/tools.js');
 
 const test_data = {
     "title": scriptName,
     "header": {
-        "authorization": "bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0Njc3NTYsImlhdCI6MTc0NzM4MTM1NiwiaXNzIjoic2VjdXJpdHkuYmx1ZWJpcmQuaWQiLCJzdWIiOiJHb2xkIEpLVCBQdXNhdCIsImF1dGhfdGltZSI6MTc0NzM4MTM1NiwibmFtZSI6IkdvbGQgSktUIFB1c2F0IiwiZW1haWwiOiJnb2xkamt0NUBibHVlYmlyZC5pZCIsInBob25lX251bWJlciI6IjA4NTczMjcyMTAzMSIsImFkZHJlc3MiOnt9LCJ1dWlkIjoiN2M1ZjE3YjctMDhkNi00OTJiLWI1NjQtYmNiMjQ0OGRiNDU3IiwidWlkIjoiZ29sZGprdDUiLCJkb21haW4iOiJibHVlYmlyZC5pZCIsImFjbCI6eyIxIjo0Mjk0OTY3Mjk1LCIxMCI6MTQwNzM3NDg4MzU1MzI3LCIxMjYiOjMsIjE4Ijo4MTkxLCIyNSI6MTMxMDcxLCIzMCI6NDI5NDk2NzI5NiwiMzkiOjY4NzE5NDc2NzM1LCI0NiI6MTA3Mzc0MTgyMywiNTUiOjE1LCI2MSI6MTY3NzcyMTUsIjY3IjoyMDQ3LCI3NiI6MTI3LCI5MyI6NTYyOTQ5OTUzNDIxMzExfSwiYWNscyI6eyIxIjoiNDI5NDk2NzI5NSIsIjEwIjoiMTQwNzM3NDg4MzU1MzI3IiwiMTI2IjoiMyIsIjE4IjoiODE5MSIsIjI1IjoiMTMxMDcxIiwiMzAiOiI0Mjk0OTY3Mjk2IiwiMzkiOiI2ODcxOTQ3NjczNSIsIjQ2IjoiMTA3Mzc0MTgyMyIsIjU1IjoiMTUiLCI2MSI6IjE2Nzc3MjE1IiwiNjciOiIyMDQ3IiwiNzYiOiIxMjciLCI5MyI6IjU2Mjk0OTk1MzQyMTMxMSJ9LCJkb21haW5faWQiOiJhMGE0ODA3Ni0zMTk0LTQ2MTItYWZhZS01YmEwYjQ2ZDYxOGMiLCJkb21haW5fbmFtZSI6IkpLVCIsImRvbWFpbl90eXBlIjoyLCJncm91cF9uYW1lIjoiZ2JfcmVzZXJ2YXNpIiwiYmJnLmJiZC5hY2Nlc3MiOnsiYXJlYXMiOlsiYTBhNDgwNzYtMzE5NC00NjEyLWFmYWUtNWJhMGI0NmQ2MThjIl0sIm91dGxldHMiOm51bGwsInBvb2xzIjpudWxsfSwidXNlcl90eXBlIjoxLCJvcGVyYXRvcl9jb2RlIjoiSE8ifQ.vsMMdaFmxu7TXuW2qYWYXDR57hObeW413A83gijkb-3W7fdRr8PD_YzvHUoCMGDsYGiwveRLSyUT_ppMMHqs_w"
+        "authorization": globalVars.__TOKEN__
     },
     "body":{
         "header": {
