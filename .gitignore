@@ -3,3 +3,6 @@ package-lock.json
 
 jest-html-reporters-attach/
 jest_html_reporters.html
+
+#global variable is not included when push
+config/global-variables.json
